@@ -3,6 +3,7 @@
 namespace LaravelRotEbal\GovNova;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class GovNovaServiceProvider extends ServiceProvider
 {
@@ -42,6 +43,8 @@ class GovNovaServiceProvider extends ServiceProvider
             // Registering package commands.
             // $this->commands([]);
         }
+
+        $this->registerRoutes();
     }
 
     /**
@@ -57,4 +60,37 @@ class GovNovaServiceProvider extends ServiceProvider
             return new GovNova;
         });
     }
+
+
+
+    /**
+     * Register the package routes.
+     *
+     * @return void
+     */
+    protected function registerRoutes() {
+        Route::group($this->routeConfiguration(), function () {
+            $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
+        });
+    }
+
+
+
+    /**
+     * Get the Nova route group configuration array.
+     *
+     * @return array
+     */
+    protected function routeConfiguration() {
+        return [
+            'namespace' => 'LaravelRotEbal\GovNova\Http\Controllers',
+            'domain' => config('nova.domain', null),
+            'as' => 'nova.api.',
+            'prefix' => 'nova-api',
+            'middleware' => 'nova',
+        ];
+    }
+
+
+
 }
