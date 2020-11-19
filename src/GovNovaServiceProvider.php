@@ -3,6 +3,7 @@
 namespace LaravelRotEbal\GovNova;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class GovNovaServiceProvider extends ServiceProvider
 {
