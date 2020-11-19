@@ -18,7 +18,19 @@ composer require laravelrotebal/govnova
 ## Usage
 
 ``` php
-// Usage description here
+use Laravel\Nova\Nova;
+use LaravelRotEbal\GovNova\GovNova;
+
+class YourServiceProvider extends ServiceProvider {
+    public function boot()
+    {
+        Nova::serving(function (ServingNova $event) {
+            GovNova::media('my', __DIR__ . '/../dist/media/');
+        });
+    }
+
+}
+
 ```
 
 ### Testing

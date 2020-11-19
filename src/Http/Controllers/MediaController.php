@@ -3,12 +3,11 @@
 
 namespace LaravelRotEbal\GovNova\Http\Controllers;
 
-use App\GovNova;
 use DateTime;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Arr;
 use Laravel\Nova\Http\Requests\NovaRequest;
-
+use LaravelRotEbal\GovNova\GovNova;
 
 
 class MediaController extends Controller {
