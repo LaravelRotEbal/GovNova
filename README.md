@@ -30,9 +30,10 @@ class YourServiceProvider extends ServiceProvider {
     }
 
 }
+```
 
+```
 GET https://localhost/nova-api/media/my/image.png
-
 ```
 
 ### Testing
