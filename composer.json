@@ -1,0 +1,54 @@
+{
+    "name": "laravelrotebal/govnova",
+    "description": "Improvements for Laravel Nova.",
+    "keywords": [
+        "laravelrotebal",
+        "govnova"
+    ],
+    "homepage": "https://github.com/laravelrotebal/govnova",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Krot Eval",
+            "email": "38257723+4n70w4@users.noreply.github.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelRotEbal\\GovNova\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaravelRotEbal\\GovNova\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelRotEbal\\GovNova\\GovNovaServiceProvider"
+            ],
+            "aliases": {
+                "GovNova": "LaravelRotEbal\\GovNova\\GovNovaFacade"
+            }
+        }
+    }
+}
